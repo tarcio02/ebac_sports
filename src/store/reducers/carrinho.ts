@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { PayloadAction } from '@reduxjs/toolkit'
 
 import { Produto } from '../../App'
 

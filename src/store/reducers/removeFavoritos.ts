@@ -11,18 +11,18 @@ const initialState: favoritoState = {
   favoritos: []
 }
 
-const favoritoSlice = createSlice({
-  name: 'favoritar',
+const removeFavoritoSlice = createSlice({
+  name: 'remover',
   initialState,
   reducers: {
-    favoritar: (state, action: PayloadAction<Produto>) => {
+    remover: (state, action: PayloadAction<Produto>) => {
       const produto = action.payload
       if (state.favoritos.find((p) => p.id === produto.id)) {
-        state.favoritos.push(produto)
+        state.favoritos.indexOf(produto)
       }
     }
   }
 })
 
-export const { favoritar } = favoritoSlice.actions
-export default favoritoSlice.reducer
+export const { remover } = removeFavoritoSlice.actions
+export default removeFavoritoSlice.reducer
